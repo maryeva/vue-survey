@@ -1,0 +1,62 @@
+{
+  "name": "dashboard",
+  "scripts": {
+  },
+  "env": {
+    "API_URL": {
+      "required": true
+    },
+    "APP_URL": {
+      "required": true
+    },
+    "HOST": {
+      "required": true
+    },
+    "INTERCOM_APP_ID": {
+      "required": true
+    },
+    "INTERCOM_SECRET_KEY": {
+      "required": true
+    },
+    "NPM_TOKEN": {
+      "required": true
+    },
+    "PORT": {
+      "required": true
+    },
+    "POSTCODE_SEARCH_HOST": {
+      "required": true
+    },
+    "POSTCODE_SEARCH_KEY": {
+      "required": true
+    },
+    "SEGMENT_ID": {
+      "required": true
+    },
+    "SENTRY_URL": {
+      "required": true
+    },
+    "STRIPE_PUBLISHABLE_KEY": {
+      "required": true
+    },
+    "STRIPE_SECRET_KEY": {
+      "required": true
+    },
+    "WEB_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
