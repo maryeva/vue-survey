@@ -65,8 +65,6 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
-
   .additional-tests
     margin-bottom: 30px
 

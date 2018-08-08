@@ -40,16 +40,15 @@ export default {
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   .content-loader
     &__inner
       width: 100%
-      background-color: THRIVA.colours.white
+      background-color: #FFFFFF
       padding: 20px 20px 70px
       margin: 0 auto 30px
-      radius(lg)
-      shadow(sm)
+      border-radius: 10px
+      box-shadow: 0 1px 4px 0 rgba(#3D4250, 0.18)
 
       .divider
         margin-bottom: 10px

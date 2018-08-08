@@ -30,17 +30,16 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   .info-tool-tip
     &.popper
-      background-color: THRIVA.colours.white
+      background-color: #FFFFFF
       border: none
       padding: 20px
       text-align: left
       z-index: 10
-      radius(lg)
-      shadow(md)
+      border-radius: 10px
+      box-shadow: 0 6px 20px 0 rgba(#3D4250, 0.18)
 
       .popper__arrow
         display: none

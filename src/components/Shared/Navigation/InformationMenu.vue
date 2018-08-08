@@ -28,8 +28,6 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/mixins'
 
   .information-menu
     padding: 20px 0
@@ -41,13 +39,13 @@
         list-style: none
         a
           text-decoration: none
-          color: THRIVA.colours.xx-dark-grey
+          color: #565B75
           padding: 13px 0
           display: flex
           align-items: center
           position: relative
-          font-weight: THRIVA.typography.font-weights.regular
-          font-size: rem-calc(18px)
+          font-weight: 400
+          font-size: 18px
           
           &.router-link-active
             &::before
@@ -58,17 +56,17 @@
               border-radius: 50%
               left: 15px
               top: 15px
-              background: THRIVA.colours.pink
+              background: #FA476F
             
         &:hover
-          background-color: THRIVA.colours.xx-light-grey
+          background-color: #F7F9FB
           
         &--title
           letter-spacing: 2px
           text-transform: uppercase
           padding: 10px 0
           overflow: hidden
-          color: THRIVA.colours.grey
+          color: #99A2BF
           
           &:hover
             background: none
@@ -76,7 +74,7 @@
         &.divider
           display: none
           
-    +media-breakpoint-up(md)
+    @media (min-width: 768px)
       margin-top: 0
       .information-menu__list
         padding: 0
@@ -85,7 +83,7 @@
           &--title
             display: none
           a
-            font-size: rem-calc(16px)
+            font-size: 16px
             padding: 10px 0
         
       .information-menu__item--divider
@@ -93,5 +91,5 @@
         margin: 10px 0
         width: 100%
         height: 2px
-        background: THRIVA.colours.x-light-grey
+        background: #EFF4F7
 </style>

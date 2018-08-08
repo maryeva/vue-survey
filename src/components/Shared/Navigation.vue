@@ -259,11 +259,9 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/mixins'
 
   mobileMenuOffset=62px
-  mobileMenuBackgroundColor=THRIVA.colours.x-light-grey
+  mobileMenuBackgroundColor=#EFF4F7
 
   toggleHeight=32px
   toggleBarWidth=32px
@@ -300,7 +298,7 @@
     justify-content: flex-end
     align-items: center
 
-    +media-breakpoint-up(md)
+    @media (min-width: 768px)
       overflow: hidden
 
     // Mobile navigation toggle
@@ -319,7 +317,7 @@
         width: toggleBarWidth
         height: toggleBarHeight
         border-radius: toggleBarRadius
-        background-color: THRIVA.colours.xx-dark-grey
+        background-color: #565B75
         transition: all 0.25s ease-in-out
       :first-child
         transform: translateY(-8px)
@@ -365,11 +363,11 @@
             right: 18px
             letter-spacing: 1px
             text-transform: uppercase
-            color: THRIVA.colours.white
+            color: #FFFFFF
             text-align: center
-            background-color: THRIVA.colours.purple
+            background-color: #664277
             display: inline-block
-            radius(lg)
+            border-radius: 10px
 
     .mobile-menu-extension
       padding: 0 30px
@@ -378,9 +376,9 @@
         padding-bottom: 25px
 
       .menu__item
-        color: THRIVA.colours.xx-dark-grey
+        color: #565B75
         text-decoration: none
-        font-weight: THRIVA.typography.font-weights.regular
+        font-weight: 400
         font-size: rem-calc(18px)
         display: block
         padding: 15px 0 13px
@@ -398,11 +396,11 @@
             left: 105px
             letter-spacing: 1px
             text-transform: uppercase
-            color: THRIVA.colours.white
+            color: #FFFFFF
             text-align: center
-            background-color: THRIVA.colours.purple
+            background-color: #664277
             display: inline-block
-            radius(lg)
+            border-radius: 10px
 
         img
           height: 17px
@@ -428,20 +426,20 @@
 
         // On mobile, use this container as the menu background
         &__wrap
-          background-color: THRIVA.colours.white
+          background-color: #FFFFFF
           margin: 20px
           padding-top: 15px
           padding-bottom: 5px
-          radius(lg)
-          shadow(md)
+          border-radius: 10px
+          box-shadow: 0 6px 20px 0 rgba(#3D4250, 0.18)
 
           .dropdown-menu
-            border-top: 1px solid THRIVA.colours.light-grey
+            border-top: 1px solid #E5E7F1
 
             &:first-of-type
               border-top: none
 
-    +media-breakpoint-up(md)
+    @media (min-width: 768px)
       .navigation__toggle
         display: none
       .menu
@@ -457,8 +455,8 @@
           padding: 20px
           display: block
           text-decoration: none
-          color: THRIVA.colours.xx-dark-grey
-          font-weight: THRIVA.typography.font-weights.regular
+          color: #565B75
+          font-weight: 400
           transition: all 0.1s ease-in
           &--dropdown
             cursor: default
@@ -466,7 +464,7 @@
             opacity: 0.35
             &[data-dropdown-menu-id="account"]
               &:before
-                border-left-color: darken(THRIVA.colours.light-grey, 18%)
+                border-left-color: darken(#E5E7F1, 18%)
           &:hover
             opacity: 1
 
@@ -477,7 +475,7 @@
             left: 7px
             height: 5px
             width: 5px
-            background: THRIVA.colours.pink
+            background: #FA476F
             border-radius: 50%
 
       .mobile-menu-extension
@@ -497,7 +495,7 @@
         transition: transform 0.2s
 
       .dropdown__bg
-        background-color: THRIVA.colours.white
+        background-color: #FFFFFF
         position: absolute
         z-index: -1
         top: 0
@@ -510,12 +508,12 @@
         transform: translateZ(0)
         will-change: transform
         backface-visibility: hidden
-        radius(lg)
+        border-radius: 10px
       .dropdown__wrap
         overflow-x: hidden
         overflow-y: visible
         margin: 0
-        background-color: THRIVA.colours.white
+        background-color: #FFFFFF
         position: absolute
         padding-top: 0
         top: 0
@@ -587,7 +585,7 @@
           height: 100%
           position: absolute
           left: 0
-          border-left: 1px solid THRIVA.colours.light-grey
+          border-left: 1px solid #E5E7F1
           transition: all 0.1s ease-in
 
         &:after
@@ -600,7 +598,7 @@
           right: 5px
           top: 24px
 
-    +media-breakpoint-up(lg)
+    @media (min-width: 1024px)
       .menu
         &__item
           padding-left: 30px

@@ -115,7 +115,6 @@
 </template>
 
 <style lang="stylus">
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   .button.button--async
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all
@@ -131,37 +130,37 @@
       &:hover, &:active, &:focus
         transform: translateY(0)
         box-shadow: none
-        // background-color: THRIVA.colours.blue
+        // background-color: #3ECADD
       .label
         padding-left: 30px
 
     &.error
-      background-color: THRIVA.colours.pink
-      border-color: THRIVA.colours.pink
+      background-color: #FA476F
+      border-color: #FA476F
       cursor: default
 
       &:hover, &:active, &:focus
         transform: translateY(0)
         box-shadow: none
-        background-color: THRIVA.colours.pink
-        border-color: THRIVA.colours.pink
+        background-color: #FA476F
+        border-color: #FA476F
 
     &.success
-      background-color: THRIVA.colours.green
-      border-color: THRIVA.colours.green
+      background-color: #AEEC73
+      border-color: #AEEC73
       cursor: default
 
       &:hover, &:active, &:focus
         transform: translateY(0)
         box-shadow: none
-        background-color: THRIVA.colours.green
-        border-color: THRIVA.colours.green
+        background-color: #AEEC73
+        border-color: #AEEC73
 
     &.transparent
       .spinner
         &:before
-          border-top-color: THRIVA.colours.xx-dark-grey
-          border-left-color: THRIVA.colours.xx-dark-grey
+          border-top-color: #565B75
+          border-left-color: #565B75
 
     @keyframes spinner
       to {transform: rotate(360deg)}
@@ -176,8 +175,8 @@
       width: 20px
       z-index: 1
       border: 3px solid transparent
-      border-top-color: THRIVA.colours.white
-      border-left-color: THRIVA.colours.white
+      border-top-color: #FFFFFF
+      border-left-color: #FFFFFF
       border-radius: 50%
       animation: spinner 0.5s linear infinite
 </style>

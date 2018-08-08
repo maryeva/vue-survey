@@ -71,14 +71,13 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
     .profile-card
       padding: 0 0 20px
       margin: 30px auto
-      background-color: THRIVA.colours.white
-      radius(lg)
-      shadow(md)
+      background-color: #FFFFFF
+      border-radius: 10px
+      box-shadow: 0 6px 20px 0 rgba(#3D4250, 0.18)
 
       &-header
         padding: 20px 30px 0 30px
@@ -87,25 +86,25 @@
         overflow: hidden
 
         &__name, &__price
-          color: THRIVA.colours.xx-dark-grey
-          font-size: rem-calc(20px)
-          font-weight: THRIVA.typography.font-weights.regular
+          color: #565B75
+          font-size: 20px
+          font-weight: 400
 
         &__name
           margin-bottom: 0
 
         &__price
           padding: 0
-          color: THRIVA.colours.dark-grey
+          color: #6F749A
 
       &-category
         padding: 18px 20px
         text-transform: uppercase
-        color: THRIVA.colours.dark-grey
-        font-size: rem-calc(14px)
+        color: #6F749A
+        font-size: 14px
         letter-spacing: 1px
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           padding: 18px 30px
 
         &__icon
@@ -114,18 +113,18 @@
           align-items: center
           width: 24px
           height: 24px
-          background-color: THRIVA.colours.xx-light-grey
-          border: 1px solid THRIVA.colours.light-grey
+          background-color: #F7F9FB
+          border: 1px solid #E5E7F1
           border-radius: 50%
           margin-right: 10px
-          color: THRIVA.colours.xx-dark-grey
-          font-weight: THRIVA.typography.font-weights.regular
+          color: #565B75
+          font-weight: 400
           padding-bottom: 2px
 
       &-body
         padding: 0 20px
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           padding: 0 30px
 
         &__description
@@ -136,7 +135,7 @@
         padding: 0 20px
         margin-top: 20px
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           height: 66px
           padding: 0 30px
           margin-top: 0
@@ -151,7 +150,7 @@
             display: flex
             width: 100%
 
-            +media-breakpoint-up(md)
+            @media (min-width: 768px)
               margin-bottom: 0
               display: flex
               align-items: center
@@ -161,28 +160,28 @@
               width: 16px
               height: 16px
               margin: 2px 5px 0 0
-              background-color: THRIVA.colours.orange
-              mask: url('~@thrivadev/thriva-ui/src/assets/images/icons/error-16.svg') no-repeat center
+              background-color: #FFC662
+              mask: url('~/static/images/icons/error-16.svg') no-repeat center
 
             span
-              font-size: rem-calc(14px)
-              color: THRIVA.colours.xx-dark-grey
+              font-size: 14px
+              color: #565B75
 
           &__timing
             margin-bottom: 3px
 
-            +media-breakpoint-up(md)
+            @media (min-width: 768px)
               margin: auto
 
           &__sample
             margin-top: 3px
             margin-bottom: 15px
 
-            +media-breakpoint-up(md)
+            @media (min-width: 768px)
               margin: auto
 
         &__button
-          +media-breakpoint-up(md)
+          @media (min-width: 768px)
             position: absolute
             top: 20px
             right: 30px
@@ -190,13 +189,13 @@
           button.button
             width: 100%
 
-            +media-breakpoint-up(md)
+            @media (min-width: 768px)
               width: 160px
 
       .divider
         margin: 0 20px
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           margin: 0 30px
 
 </style>

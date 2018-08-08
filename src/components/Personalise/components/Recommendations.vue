@@ -89,7 +89,6 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   .personalise-recommendations
     position: relative
@@ -99,48 +98,48 @@
     &:before
       content: ''
       height: 1px
-      background-color: THRIVA.colours.light-grey
+      background-color: #E5E7F1
       display: inline-block
       position: absolute
       margin-top: -25px
       left: -50px
       right: -50px
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         display: none
 
     &:after
       content: ''
       height: 1px
-      background-color: THRIVA.colours.light-grey
+      background-color: #E5E7F1
       display: inline-block
       position: absolute
       margin-top: 40px
       left: -50px
       right: -50px
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         left: 0
         right: 0
 
     &-card
       display: block
       padding: 15px 80px 25px
-      background-color: THRIVA.colours.purple
+      background-color: #664277
       text-align: center
-      radius(lg)
-      shadow(md)
+      border-radius: 10px
+      box-shadow: 0 6px 20px 0 rgba(#3D4250, 0.18)
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         display: flex
         padding: 15px 20px
 
       p
-        color: THRIVA.colours.white
+        color: #FFFFFF
         font-size: rem-calc(16px)
-        font-weight: THRIVA.typography.font-weights.regular
+        font-weight: 400
 
-        +media-breakpoint-up(lg)
+        @media (min-width: 1024px)
           font-size: rem-calc(20px)
 
         &.no-recommendations
@@ -148,7 +147,7 @@
           margin-left: -40px
           margin-right: -40px
 
-          +media-breakpoint-up(md)
+          @media (min-width: 768px)
             margin-left: auto
             margin-right: auto
 
@@ -158,18 +157,18 @@
         justify-content: center
         flex-direction: row-reverse
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           flex-direction: unset
 
         p
           font-size: rem-calc(70px)
           line-height: 1.2
 
-          +media-breakpoint-up(md)
+          @media (min-width: 768px)
             font-size: rem-calc(20px)
 
         &__figure
-          +media-breakpoint-up(md)
+          @media (min-width: 768px)
             margin-right: 7px
 
         svg

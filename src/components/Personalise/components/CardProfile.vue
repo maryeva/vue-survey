@@ -46,20 +46,18 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
-
   .card-profile
     width: 100%
     height: 20px
     position: relative
     font-size: 14px
     line-height: 21px
-    color: THRIVA.colours.xx-dark-grey
-    font-weight: THRIVA.typography.font-weights.regular
+    color: #565B75
+    font-weight: 400
     display: flex
     align-items: center
 
-    +media-breakpoint-up(md)
+    @media (min-width: 768px)
       font-size: 16px
       line-height: 24px
 
@@ -68,7 +66,7 @@
       overflow: hidden
       text-overflow: ellipsis
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         max-width: 200px
 
     &__action
@@ -79,43 +77,43 @@
     &__close
       width: 20px
       height: 20px
-      background-color: THRIVA.colours.pink
-      mask: url('~@thrivadev/thriva-ui/src/assets/images/icons/cross-20.svg') no-repeat center
+      background-color: #FA476F
+      mask: url('~/static/images/icons/cross-20.svg') no-repeat center
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         width: 24px
         height: 24px
-        mask: url('~@thrivadev/thriva-ui/src/assets/images/icons/cross-24.svg') no-repeat center
+        mask: url('~/static/images/icons/cross-24.svg') no-repeat center
 
     &__undo
       font-size: 16px
-      color: THRIVA.colours.blue
+      color: #3ECADD
       font-style: normal
 
     &__icon
       width: 20px
       height: 20px
       margin-right: 10px
-      background-color: THRIVA.colours.green
-      mask: url('~@thrivadev/thriva-ui/src/assets/images/icons/personalisation-24.svg') no-repeat center
+      background-color: #AEEC73
+      mask: url('~/static/images/icons/personalisation-24.svg') no-repeat center
 
       &--blue
-        background-color: THRIVA.colours.blue
+        background-color: #3ECADD
 
       &--baseline
-        background-color: THRIVA.colours.orange
+        background-color: #FFC662
 
       &--advanced
-        background-color: THRIVA.colours.purple
+        background-color: #664277
 
     &__removed
       font-style: italic
       font-weight: normal
-      color: THRIVA.colours.input-border-grey
+      color: #CED0D9
 
     &__price
-      color: THRIVA.colours.grey
-      font-size: rem-calc(14px)
+      color: #99A2BF
+      font-size: 14px
       margin-right: 10px
       
 </style>

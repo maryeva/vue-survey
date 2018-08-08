@@ -1,7 +1,6 @@
 <script>
   import Loader from '@/components/Personalise/components/Loader'
   import PersonaliseHeading from '@/components/Personalise/components/PersonaliseHeading'
-  // import BackBreadcrumb from '@/components/Personalise/components/BackBreadcrumb'
   import CardProfile from '@/components/Personalise/components/CardProfile'
   import { ContentLoader } from 'vue-content-loader'
   import ThvButton from '@/components/Shared/Button'
@@ -13,7 +12,6 @@
       Loader,
       PersonaliseHeading,
       AsyncButton,
-      // BackBreadcrumb,
       ThvButton,
       CardProfile,
       ContentLoader
@@ -234,7 +232,6 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   .personalise-sub__wrapper
     position: relative
@@ -246,22 +243,22 @@
     width: 100%
     position: relative
 
-    +media-breakpoint-up(md)
+    @media (min-width: 768px)
       margin-right: 10px
       position: absolute
       right: 0
       max-width: 300px
 
-    +media-breakpoint-up(900px)
+    @media (min-width: 900px)
       right: 30px
       max-width: 320px
 
-    +media-breakpoint-up(lg)
+    @media (min-width: 1024px)
       right: 50px
       width: 350px
       max-width: 350px
 
-    +media-breakpoint-up(1200px)
+    @media (min-width: 1200px)
       margin-left: 720px
       right: auto
 
@@ -269,16 +266,16 @@
       position: fixed
       margin-top: -270px
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         right: 10px
 
-      +media-breakpoint-up(900px)
+      @media (min-width: 900px)
         right: 40px
 
-      +media-breakpoint-up(lg)
+      @media (min-width: 1024px)
         right: 55px
 
-      +media-breakpoint-up(1200px)
+      @media (min-width: 1200px)
         right: auto
 
       &-bottom
@@ -287,11 +284,11 @@
 
 
     &-card
-      background-color: THRIVA.colours.white
-      radius(lg)
-      shadow(sm)
+      background-color: #FFFFFF
+      border-radius: 10px
+      box-shadow: 0 1px 4px 0 rgba(#3D4250, 0.18)
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         position: relative
 
       &__header
@@ -309,12 +306,12 @@
 
       &__name
         display: inline-block
-        font-size: rem-calc(16px)
+        font-size: 16px
         margin-bottom: 0
         text-transform: capitalize
 
-        +media-breakpoint-up(md)
-          font-size: rem-calc(21px)
+        @media (min-width: 768px)
+          font-size: 21px
 
       &__price
         display: flex
@@ -322,8 +319,8 @@
         font-weight: 400
 
         &__info
-          font-size: rem-calc(14px)
-          color: THRIVA.colours.grey
+          font-size: 14px
+          color: #99A2BF
 
       &__loader
         padding-left: 3px
@@ -331,8 +328,8 @@
 
       &__switcher-button
         display: inline-block
-        font-size: rem-calc(16px)
-        line-height: rem-calc(24px)
+        font-size: 16px
+        line-height: 24px
         margin-left: 8px
         text-decoration: none
 
@@ -345,33 +342,34 @@
           width: w = 14px
           height: w
           margin-right: 10px
-          stroke: THRIVA.colours.green
+          stroke: #AEEC73
 
         li
           font-size: 14px
           line-height: 32px
-          color: THRIVA.colours.xx-dark-grey
+          color: #565B75
 
-          +media-breakpoint-up(md)
+          @media (min-width: 768px)
             font-size: 16px
 
           &.profile__removed
-            color: THRIVA.colours.input-border-grey
+            color: #CED0D9
 
       &__body
         position: relative
         bottom: 0
         padding: 20px
-        font-weight: THRIVA.typography.font-weights.regular
+        font-weight: 400
 
         &--baseline
           svg
-            stroke: THRIVA.colours.orange
+            stroke: #FFC662
 
         &--advanced
           svg
-            stroke: THRIVA.colours.purple
-        +media-breakpoint-up(md)
+            stroke: #664277
+
+        @media (min-width: 768px)
           display: block
 
       &__footer
@@ -382,12 +380,12 @@
         right: 0
         display: flex
         align-items: center
-        background-color: THRIVA.colours.white
+        background-color: #FFFFFF
         padding: 12px 20px
         box-shadow 0 -6px 20px 0 rgba(61, 66, 80, 0.18)
         z-index: 1
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           display: none
 
         &--confirm
@@ -402,20 +400,20 @@
           width: 32px
           height 32px
           margin-left: -6px
-          background-color: THRIVA.colours.purple
-          font-size: rem-calc(14px)
-          color: THRIVA.colours.white
+          background-color: #664277
+          font-size: 14px
+          color: #FFFFFF
           display: inline-flex
           justify-content: center
           align-items: center
-          border: 3px solid THRIVA.colours.white
+          border: 3px solid #FFFFFF
           border-radius: 50%
 
         &__price
           margin-left: 10px
-          font-size: rem-calc(18px)
-          font-weight: THRIVA.typography.font-weights.regular
-          color: THRIVA.colours.dark-grey
+          font-size: 18px
+          font-weight: 400
+          color: #6F749A
 
         button.button
           position: absolute
@@ -430,7 +428,7 @@
         padding: 25px 0 10px 0
         margin: 0
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           padding-bottom: 0
 
       &__addon-profile:not(:last-child)
@@ -444,7 +442,7 @@
         &--confirm
           display: block
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           display: block
 
       button&__confirm-button
@@ -452,8 +450,8 @@
         margin-top: 25px
 
         &:disabled
-          background-color: THRIVA.colours.grey
-          border-color: THRIVA.colours.grey
+          background-color: #99A2BF
+          border-color: #99A2BF
 
       &__one-off-link
         display: block
@@ -461,8 +459,8 @@
 
       &__warning
         display: flex
-        font-size: rem-calc(14px)
-        color: THRIVA.colours.xx-dark-grey
+        font-size: 14px
+        color: #565B75
         margin-top: 20px
 
         &__icon
@@ -470,8 +468,8 @@
           width: 16px
           height: 16px
           margin: 1px 5px 0 0
-          background-color: THRIVA.colours.orange
-          mask: url('~@thrivadev/thriva-ui/src/assets/images/icons/error-16.svg') no-repeat center
+          background-color: #FFC662
+          mask: url('~/static/images/icons/error-16.svg') no-repeat center
 
 
 </style>

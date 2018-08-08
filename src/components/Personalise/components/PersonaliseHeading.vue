@@ -11,7 +11,6 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
   
   .personalise-heading
     margin-top: 20px

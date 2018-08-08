@@ -88,21 +88,20 @@ export default {
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   a.button,
   button.button
     position: relative;
-    background-color: THRIVA.colours.blue
-    border: 2px solid THRIVA.colours.blue
-    border-radius: rem-calc(100px)
-    height: h = rem-calc(40px)
+    background-color: #3ECADD
+    border: 2px solid #3ECADD
+    border-radius: 100px
+    height: h = 40px
     line-height: (h/1.09)
-    font: rem-calc(16px)/h THRIVA.global.font-family
-    font-weight: THRIVA.typography.font-weights.regular
+    font: 16px/h 'sofia-pro', 'sofia pro', 'Helvetica', 'Arial', sans-serif,
+    font-weight: 400
     padding: 0 (h/1.5)
     min-width: 105px
-    color: THRIVA.colours.white
+    color: #FFFFFF
     margin: 0
     display: inline-block
     transition: 0.2s
@@ -112,23 +111,23 @@ export default {
     text-decoration none
 
     &--large
-      height: h = rem-calc(46px)
+      height: h = 46px
       line-height: (h/1.09)
       padding: 0 (h/1.5)
 
     &--small
-      font-size: rem-calc(14px)
-      height: h = rem-calc(32px)
+      font-size: 14px
+      height: h = 32px
       line-height: (h/1.09)
       padding: 0 (h/2)
 
     &:hover
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         transform: translateY(-3px)
-        background-color: lighten(THRIVA.colours.blue, 10%)
-        border: 2px solid lighten(THRIVA.colours.blue, 10%)
-        box-shadow: 0 1px 4px 0 rgba(THRIVA.colours.xx-dark-grey,0.18)
-        color: THRIVA.colours.white
+        background-color: lighten(#3ECADD, 10%)
+        border: 2px solid lighten(#3ECADD, 10%)
+        box-shadow: 0 1px 4px 0 rgba(#565B75,0.18)
+        color: #FFFFFF
         position: relative
 
         &:before
@@ -142,8 +141,8 @@ export default {
 
     &:active
       transform: translateY(0)
-      background-color: darken(THRIVA.colours.blue, 15%)
-      border: 2px solid darken(THRIVA.colours.blue, 15%)
+      background-color: darken(#3ECADD, 15%)
+      border: 2px solid darken(#3ECADD, 15%)
 
     &:focus
       &:active
@@ -154,13 +153,13 @@ export default {
       &:after
         content: ''
         position: absolute
-        border-radius: rem-calc(100px)
+        border-radius: 100px
         top: n = -3px
         right: n
         bottom: n
         left: n
-        border: 2px solid THRIVA.colours.white
-        box-shadow: 0 0 rem-calc(6px) 0 THRIVA.colours.blue
+        border: 2px solid #FFFFFF
+        box-shadow: 0 0 6px 0 #3ECADD
       
     &.disabled, &:disabled
       cursor: default
@@ -168,25 +167,51 @@ export default {
       &:hover, &:active, &:focus
         transform: translateY(0)
         box-shadow: none
-        background-color: THRIVA.colours.blue
+        background-color: #3ECADD
 
     &--secondary
-      background-color: THRIVA.colours.light-purple
-      border: 2px solid THRIVA.colours.light-purple
+      background-color: #99A2BF
+      border: 2px solid #99A2BF
       &:hover
-        background-color: lighten(THRIVA.colours.light-purple, 10%)
-        border: 2px solid lighten(THRIVA.colours.light-purple, 10%)
+        background-color: lighten(#99A2BF, 10%)
+        border: 2px solid lighten(#99A2BF, 10%)
       &:active
-        background-color: darken(THRIVA.colours.light-purple, 15%)
-        border: 2px solid darken(THRIVA.colours.light-purple, 15%)
+        background-color: darken(#99A2BF, 15%)
+        border: 2px solid darken(#99A2BF, 15%)
       &:focus
         &:after
-          box-shadow: 0 0 rem-calc(6px) 0 THRIVA.colours.light-purple
+          box-shadow: 0 0 6px 0 #99A2BF
 
-
-    for colour in THRIVA.colours
+    colours = {
+      // PRIMARY
+      pink: #FA476F
+      purple: #664277
+      blue: #3ECADD
+      light-purple: #99A2BF
+      green: #AEEC73
+      sand: #F0DBCC
+      // SECONDARY
+      orange: #FFC662
+      red: #FF7987
+      // GREYSCALE
+      xx-light-grey: #F7F9FB
+      x-light-grey: #EFF4F7
+      light-grey: #E5E7F1
+      input-border-grey: #CED0D9
+      grey: #99A2BF
+      dark-grey: #6F749A
+      x-dark-grey: #565B75
+      xx-dark-grey: #3D4250
+      // GENERIC
+      white: #FFFFFF
+      // TYPOGRAPHY
+      headings: #565B75
+      body:  #6F749A
+    }
+    
+    for colour in colours
       &--{colour}
-        background-color: THRIVA.colours[colour]
+        background-color: colours[colour]
         border: 2px solid @background-color
         &:hover
           background-color: lighten(@background-color, 10%)
@@ -196,7 +221,7 @@ export default {
           border: 2px solid lighten(@background-color, 15%)
         &:focus
           &:after
-            box-shadow: 0 0 rem-calc(6px) 0 @background-color
+            box-shadow: 0 0 6px 0 @background-color
 
     &--static:hover
       transform: none
@@ -204,12 +229,12 @@ export default {
 
     &.transparent
       background-color: #FFFFFF
-      border: 2px solid THRIVA.colours.light-grey
-      color: THRIVA.colours.xx-dark-grey
+      border: 2px solid #E5E7F1
+      color: #565B75
 
       &:hover
         background-color: #FFFFFF
-        border: 2px solid lighten(THRIVA.colours.light-grey, 40%)
-        color: THRIVA.colours.xx-dark-grey
+        border: 2px solid lighten(#E5E7F1, 40%)
+        color: #565B75
 
 </style>

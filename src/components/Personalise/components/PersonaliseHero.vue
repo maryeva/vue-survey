@@ -15,21 +15,20 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   .personalise-hero
     position: relative
     width: 100%
     margin-top: -20px
     margin-bottom: 40px
-    background-color: THRIVA.colours.white
-    border-bottom: 1px solid THRIVA.colours.light-grey
+    background-color: #FFFFFF
+    border-bottom: 1px solid #E5E7F1
     overflow: hidden
 
     &__text
       padding: 30px 0
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         padding: 60px 0
 
     h2
@@ -47,11 +46,11 @@
       right: -140px
       top: -115px
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         right: 58px
         top: -55px
 
-      +media-breakpoint-up(lg)
+      @media (min-width: 1024px)
         right: 138px
         top: -35px
 
@@ -62,19 +61,19 @@
 
       &:before
         position: absolute
-        pill(175px, THRIVA.colours.green, 45deg, vertical)
+        pill(175px, #AEEC73, 45deg, vertical)
         background-color: white
-        border-color: THRIVA.colours.sand
-        border: 25px solid THRIVA.colours.sand
+        border-color: #F0DBCC
+        border: 25px solid #F0DBCC
         display: block
         top: -200px
         right: -260px
 
-        +media-breakpoint-up(md)
+        @media (min-width: 768px)
           top: -90px
           right: -60px
 
-        +media-breakpoint-up(lg)
+        @media (min-width: 1024px)
           top: -80px
           right: 10px
 </style>

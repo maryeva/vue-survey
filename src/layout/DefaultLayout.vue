@@ -19,10 +19,9 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
 
   body
-    background-color: THRIVA.colours.x-light-grey
+    background-color: #EFF4F7
 
   .wrapper
     position: relative
@@ -30,16 +29,16 @@
     max-width: 1680px
     min-height: 100vh
     height: 100%
-    background-color: THRIVA.colours.xx-light-grey
+    background-color: #F7F9FB
     z-index: 0
     overflow: hidden
-    shadow(sm)
+    box-shadow: 0 1px 4px 0 rgba(#3D4250, 0.18)
 
     .content
       padding-top: 20px
       height: 100%
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         padding-top: 82px
 
 </style>
