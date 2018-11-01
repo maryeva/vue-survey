@@ -1,0 +1,50 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: cypress/base:10
+    environment:
+      API_URL: https://api.thrivadev.com
+      WEB_URL: https://thrivadev.com
+      HOST: localhost
+      SENTRY_URL: ''
+      SEGMENT_ID: ''
+      TERM: xterm
+      CYPRESS_baseUrl: http://localhost:3030
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc'
+
+      - run: npm install cypress
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+            - ~/.cache
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run: 
+          command: PORT=3030 npm run dev
+          background: true
+
+      - run: npm test
+
+      - store_artifacts:
+          path: test/e2e/cypress/videos
+      - store_artifacts:
+          path: test/e2e/cypress/screenshots
