@@ -5,7 +5,6 @@ import Meta from 'vue-meta'
 import Survey from '@/components/Survey/index.js'
 
 import MinimalLayout from '@/layout/MinimalLayout'
-import ErrorPage from '@/layout/ErrorPage'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -15,7 +14,8 @@ const router = new Router({
   base: '/',
   routes: [
     {
-      path: '/survey',
+      name: 'index',
+      path: '/',
       component: Survey.views.Survey,
       meta: {
         layout: MinimalLayout,
@@ -68,15 +68,11 @@ const router = new Router({
           }
         }
       ]
-    },
-    {
-      path: '*',
-      name: 'Error',
-      meta: {
-        layout: ErrorPage
-      }
     }
-  ]
+  ],
+  scrollBehavior (to, from) {
+    return { x: 0, y: 0 }
+  }
 })
 
 export default router

@@ -1,9 +1,6 @@
 <script>
-  import { mapState, mapGetters } from 'vuex'
   import CheckButton from '@/components/Survey/components/CheckButton'
-  import { Button as ThvButton } from '@thrivadev/thriva-ui'
-
-  const CATEGORY = 'diet'
+  import ThvButton from '@/components/Shared/Button'
 
   export default {
     name: 'Diet',
@@ -11,22 +8,39 @@
       ThvButton,
       CheckButton
     },
-    computed: {
-      ...mapState('survey', {
-        name: state => state.surveyData.name,
-        diets: state => state.surveyData.diet
-      }),
-      ...mapGetters('survey', [
-        'selectionLimitReached'
-      ]),
-      currentlySelected () { return this.$store.getters['survey/selectedValue'](CATEGORY) }
+    data () {
+      return {
+        diets: {
+          no: {
+            name: 'No'
+          },
+          coeliac: {
+            name: 'Coeliac'
+          },
+          lowCarbHighFat: {
+            name: 'Low-carb, high-fat'
+          },
+          paleo: {
+            name: 'Paleo'
+          },
+          pescatarian: {
+            name: 'Pescatarian'
+          },
+          plantBased: {
+            name: 'Plant-based'
+          },
+          other: {
+            name: 'Other'
+          }
+        }
+      }
     },
     methods: {
-      toggle (value) {
-        if (this.currentlySelected.length) {
-          this.$store.dispatch('survey/TOGGLE_FIELD', { category: CATEGORY, value: this.currentlySelected[0] })
-        }
-        this.$store.dispatch('survey/TOGGLE_FIELD', { category: CATEGORY, value: value })
+      submit () {
+        this.$router.push('/dob')
+      },
+      back () {
+        this.$router.push('/goals')
       }
     }
   }
@@ -42,17 +56,18 @@
         check-button(
           v-for='(diet, key) in diets',
           :key='key',
-          :text='diet.name',
-          :value='key',
-          :selected='diet.selected',
-          @toggle='toggle'
+          :text='diet.name'
         )
 
-        thv-button(
-          element='button',
-          size='large'
-          :disabled='!currentlySelected.length'
-          @click='$router.push("/survey/dob")'
-        ) Next
+        .grid-x.button-container
+          .cell.auto
+            .back-button-container
+              .back-button(@click='back') BACK
+          .cell.auto.align-right
+            thv-button(
+              element='button',
+              size='large'
+              @click='submit'
+            ) Next
 
 </template>

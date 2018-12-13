@@ -1,152 +1,77 @@
 <script>
-  import { mapState } from 'vuex'
-
   export default {
-    name: 'Survey',
-    data () {
-      return {
-        transitionName: 'going-forward'
-      }
-    },
-    computed: {
-      ...mapState('survey', {
-        surveyStages: state => state.config.surveyStages
-      })
-    },
-    created () {
-      this.$router.beforeEach((to, from, next) => {
-        if (this.surveyStages.indexOf(to.name) < this.surveyStages.indexOf(from.name)) {
-          this.transitionName = 'going-backwards'
-        } else this.transitionName = 'going-forward'
-        next()
-      })
-    }
+    name: 'Survey'
   }
 </script>
 
 <template lang='pug'>
   .survey-questions
     .grid-container
-      transition(
-        :name='transitionName',
-        mode='out-in'
-      )
-        router-view
+      .survey-introduction(v-if='$route.name === "index"')
+        h1 Welcome to the Thriva front-end coding challenge
+        p Instructions:
+
+        p The survey starts 
+          router-link(to='/name') here
+      
+      router-view
 
 </template>
 
 <style lang='stylus'>
+  .question-description
+    font-weight: 400
+
+  p.max-limit-reached
+    color: #FA476F
+
+  .survey-questions__dob .input__dob .input__group .input__dob__year
+    max-width: 300px
+
   .survey-questions
+  .back-button-signup
     padding: 60px 0 100px
 
+    .survey-input 
+
+      input 
+        height: 60px
+
+      .input__dob
+      .input__group
+        justify-content: space-between
+        
     .align-center
       text-align: center
 
+    .align-right
+      text-align: right
+
+    .button-container
+      margin-top: 30px
+
     button.button
-      margin-top: 20px
-      min-width: 200px
+      max-width: 200px
+      width: 100%
 
-    // ANIMATE BETWEEN SURVEY STAGES
-    .going-forward-enter-active
-      animation: slideInRight 0.1s ease-in-out
+    .back-button-container
+      display: flex
+      align-items: center
+      height: 100%
 
-    .going-forward-leave-to
-      animation: slideOutLeft 0.1s ease-in-out
+      .back-button
+        outline:0
+        font-size: 14px
+        color: #3D4250
+        display flex
+        cursor: pointer
 
-    .going-backwards-enter-active
-      animation: slideInLeft 0.1s ease-in-out
-
-    .going-backwards-leave-to
-      animation: slideOutRight 0.1s ease-in-out
-
-      // animate stage connector in
-      @keyframes slideInRight
-        from
-          -webkit-transform: translate3d(100%, 0, 0)
-          transform: translate3d(100%, 0, 0)
-        to
-          -webkit-transform: translate3d(0, 0, 0)
-          transform: translate3d(0, 0, 0)
-
-      @-webkit-keyframes slideInRight
-        from
-          -webkit-transform: translate3d(100%, 0, 0)
-          transform: translate3d(100%, 0, 0)
-        to
-          -webkit-transform: translate3d(0, 0, 0)
-          transform: translate3d(0, 0, 0)
-
-      .slideInRight
-        animation-name: slideInRight
-        -webkit-animation-name: slideInRight
-    
-      // animate stage connector out
-      @keyframes slideOutLeft
-        from
-          -webkit-transform: translate3d(0, 0, 0)
-          transform: translate3d(0, 0, 0)
-
-        to
-          -webkit-transform: translate3d(-100%, 0, 0)
-          transform: translate3d(-100%, 0, 0)
-
-      @-webkit-keyframes slideOutLeft
-        from
-          -webkit-transform: translate3d(0, 0, 0)
-          transform: translate3d(0, 0, 0)
-
-        to
-          -webkit-transform: translate3d(-100%, 0, 0)
-          transform: translate3d(-100%, 0, 0)
-      
-      .slideOutLeft
-        animation-name: slideOutLeft
-        -webkit-animation-name: slideOutLeft
-
-        // animate the correction when going back
-        @-webkit-keyframes slideInLeft
-          from
-            -webkit-transform: translate3d(-100%, 0, 0)
-            transform: translate3d(-100%, 0, 0)
-
-          to
-            -webkit-transform: translate3d(0, 0, 0)
-            transform: translate3d(0, 0, 0)
-
-        @keyframes slideInLeft
-          from
-            -webkit-transform: translate3d(-100%, 0, 0)
-            transform: translate3d(-100%, 0, 0)
-
-          to
-            -webkit-transform: translate3d(0, 0, 0)
-            transform: translate3d(0, 0, 0)
-
-        .slideInLeft
-          -webkit-animation-name: slideInLeft
-          animation-name: slideInLeft
-       
-
-        @-webkit-keyframes slideOutRight
-          from
-            -webkit-transform: translate3d(0, 0, 0)
-            transform: translate3d(0, 0, 0)
-
-          to
-            -webkit-transform: translate3d(100%, 0, 0)
-            transform: translate3d(100%, 0, 0)
-
-        @keyframes slideOutRight
-          from
-            -webkit-transform: translate3d(0, 0, 0)
-            transform: translate3d(0, 0, 0)
-
-          to
-            -webkit-transform: translate3d(100%, 0, 0)
-            transform: translate3d(100%, 0, 0)
-
-        .slideOutRight
-          -webkit-animation-name: slideOutRight
-          animation-name: slideOutRight
+        &:before
+          content: url('/images/icons/chevron-16-grey.svg')
+          transform: rotate(180deg)
+          height: 14px
+          width: 14px
+          margin-top: 3px
+          margin-right: 5px
 
 </style>

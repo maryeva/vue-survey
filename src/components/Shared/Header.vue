@@ -1,29 +1,15 @@
 <script>
   import Logomark from '@/assets/images/logos/logomark.svg'
+  import SurveyProgress from '@/components/Survey/connectors/SurveyProgress'
 
   export default {
     name: 'Header',
-    props: {
-      partner: {
-        type: Object
-      }
+    components: {
+      SurveyProgress
     },
     computed: {
       logoSrc () {
-        if (this.partner && this.partner.cobranding) {
-          return this.partner.logos.cobranding_alt
-        } else {
-          return Logomark
-        }
-      }
-    },
-    methods: {
-      closeMobileNav () {
-        this.$children[2].closeMenuOnClick()
-      },
-      // TODO - Move this somewhere else
-      async logout () {
-        this.$store.dispatch('auth/DESTROY_TOKEN')
+        return Logomark
       }
     }
   }
@@ -32,25 +18,24 @@
 <template lang='pug'>
   header.header
     .header__container
-      a.header__logo.header__logo--logomark(href='/dashboard')
+      a.header__logo.header__logo--logomark(href='/')
         img(:src='logoSrc')
+      survey-progress
+
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/mixins'
-
   height=62px
 
   .header
     width: 100%
-    background: THRIVA.colours.white
+    background: #FFFFFF
     z-index: 100
     max-width: 1680px
 
     .header__container
-      max-width: THRIVA.maxContainerWidth
-      background-color: THRIVA.colours.white      
+      max-width: 1680px
+      background-color: #FFFFFF
       margin: auto
       padding: 0 20px
       position: relative
@@ -59,10 +44,10 @@
       flex-wrap: nowrap
       align-items: center
       justify-content: space-between
-      border-bottom: 1px solid THRIVA.colours.light-grey
+      border-bottom: 1px solid #E5E7F1
       z-index: 100
 
-      +media-breakpoint-up(md)
+      @media (min-width: 768px)
         padding: 0 30px
         border-bottom: none
 
@@ -74,10 +59,10 @@
         &--full
           display: none
 
-  +media-breakpoint-up(md)
+  @media (min-width: 768px)
     .header
       position: fixed
       top: 0
-      border-bottom: 1px solid THRIVA.colours.light-grey
+      border-bottom: 1px solid #E5E7F1
 
 </style>

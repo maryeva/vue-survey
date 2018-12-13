@@ -4,18 +4,13 @@
     name: 'app',
     components: {
       MinimalLayout
-    },
-    computed: {
-      layout () {
-        return this.$route.meta.layout ? this.$route.meta.layout : MinimalLayout
-      }
     }
   }
 </script>
 
 <template lang='pug'>
   #app
-    component(:is='layout')
+    minimal-layout
 </template>
 
 <style style lang='stylus'>

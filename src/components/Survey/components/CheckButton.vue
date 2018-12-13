@@ -35,39 +35,6 @@
 </template>
 
 <style lang='stylus'>
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/mixins'
-  @require '~@thrivadev/thriva-ui/src/assets/styles/modules/settings'
-
-  .check-button
-    background: THRIVA.colours.white
-    border: 1px solid THRIVA.colours.input-border-grey
-    height: 100px
-    display: flex
-    justify-content: center
-    align-items: center
-    margin-bottom: 15px
-    cursor: pointer
-    font-weight: THRIVA.typography.font-weights.regular
-    color: THRIVA.colours.xx-dark-grey
-    transition: 0.2s
-
-    &--selected
-      border: 2px solid THRIVA.colours.blue
-      background: rgba(THRIVA.colours.blue, 0.18)
-      box-shadow none
-      transition: 0.2s
-
-    &:hover
-      shadow(sm)
-
-    &:focus
-      box-shadow 0 0 3px 2px rgb(124,160,246)
-
-    &:focus &:hover
-      box-shadow 0 0 3px 2px rgb(124,160,246)
-
-    +media-breakpoint-up(md)
-      height: 120px
-      margin-bottom: 20px
+  // SUGGESTION: style the check-button here
 
 </style>

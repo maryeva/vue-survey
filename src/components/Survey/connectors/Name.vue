@@ -1,14 +1,6 @@
 <script>
-  import {
-    TextInput,
-    Button as ThvButton
-  } from '@thrivadev/thriva-ui'
-  import { createHelpers } from 'vuex-map-fields'
-
-  const { mapFields } = createHelpers({
-    getterType: `survey/getField`,
-    mutationType: `survey/UPDATE_NAME`
-  })
+  import TextInput from '@/components/Shared/TextInput'
+  import ThvButton from '@/components/Shared/Button'
 
   export default {
     name: 'Name',
@@ -16,14 +8,14 @@
       TextInput,
       ThvButton
     },
-    computed: {
-      ...mapFields([
-        'name'
-      ])
+    data () {
+      return {
+        name: ''
+      }
     },
     methods: {
       submit () {
-        this.$router.push('/survey/goals')
+        this.$router.push('/goals')
       }
     }
   }
@@ -33,20 +25,23 @@
   .grid-x.grid-x-margin
     .cell.small-12.medium-6.medium-offset-3
       .survey-questions__name.align-center
-        h1 Hey there! What’s your first name?
+        h1 Hey! We're Thriva. What’s your first name?
         .spacer.sp__top--sm
 
-        text-input(
+        text-input.survey-input(
           type='text',
           name='name',
           v-model='name'
           @keyup.enter='submit'
         )
-        thv-button(
-          element='button',
-          size='large'
-          :disabled='!name'
-          @click='submit'
-        ) Next
+
+        .grid-x.button-container
+          .cell.auto.align-right
+            thv-button(
+              element='button',
+              size='large'
+              :disabled='!name'
+              @click='submit'
+            ) Next
 
 </template>
