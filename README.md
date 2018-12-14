@@ -8,7 +8,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:3030
+# serve with hot reload at localhost:8080
 npm run dev
 
 # build for production with minification
@@ -29,4 +29,4 @@ This project was built with Vue CLI 3, check out the [guide](https://cli.vuejs.o
 
 ## Instructions
 
-Instructions can be found at [http://localhost:3030](http://localhost:3030) or in src/components/Survey/views/Survey.vue
+Instructions can be found at [http://localhost:8080](http://localhost:8080) or in src/components/Survey/views/Survey.vue
