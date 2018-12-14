@@ -48,7 +48,7 @@
 
             p.body--large Task 3
             p.body Now that we have CheckButton.vue styled we need to set up it's functionality.
-            p.body Task 3 is to make it so the user can select multiple options on the goals stage (limited to 4) and only one option on the diet and gender stages. We need a way to store this data as it will need to be sent to the server at the end of the survey. As part of this you should fix any errors component is causing and also write some unit tests for the component so we can verify it's working correctly. The test file can be found at test/unit/specs/components/Survey/components/CheckButton.test.js
+            p.body Task 3 is to make it so the user can select multiple options on the goals stage (limited to 4) and only one option on the diet and gender stages. We need a way to store this data as it will need to be sent to the server at the end of the survey. As part of this you should fix any errors component is causing and also write some unit tests for the component so we can verify it's working correctly. The test file can be found at test/unit/specs/components/Survey/components/CheckButton.test.js. npm run unit will run the tests.
 
             p.body--large Task 4
             p.body In the designs you may have noticed a progress bar in the top right corner of the screen. In the Survey/connectors folder you will find SurveyProgress.vue. This is the parent component for components/Shared/ProgressBar.vue.
