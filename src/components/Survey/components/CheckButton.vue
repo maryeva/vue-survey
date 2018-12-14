@@ -1,5 +1,4 @@
 <script>
-  // TODO: MOVE TO THRIVA-UI
   export default {
     name: 'CheckButton',
     props: {
@@ -15,11 +14,6 @@
         type: Boolean,
         default: false
       }
-    },
-    methods: {
-      toggle (value) {
-        this.$emit('toggle', value)
-      }
     }
   }
 </script>
@@ -27,9 +21,7 @@
 <template lang='pug'>
   .check-button(
     :class="{ 'check-button--selected': selected }",
-    tabindex='0',
-    @click='toggle(value)',
-    @keydown.enter='toggle(value)'
+    tabindex='0'
   ) {{ text }}
 
 </template>

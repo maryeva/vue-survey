@@ -1,5 +1,4 @@
 <script>
-  // TODO: MOVE TO THRIVA-UI
   export default {
     name: 'ProgressBar',
     props: {
