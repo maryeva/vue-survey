@@ -29,4 +29,4 @@ This project was built with Vue CLI 3, check out the [guide](https://cli.vuejs.o
 
 ## Instructions
 
-Instructions can be found at [localhost:3030](localhost:3030) or in src/components/Survey/views/Survey.vue
+Instructions can be found at [http://localhost:3030](http://localhost:3030) or in src/components/Survey/views/Survey.vue
