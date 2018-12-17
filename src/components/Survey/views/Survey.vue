@@ -30,10 +30,14 @@
             p.body There are a few improvements we'd like you to make to this survey to give our users the best experience possible while going through the process. This project only includes the survey phase on the onboarding flow so you don't need to worry about the recommendation side of things.
 
             h3 Instructions
-            p.body The final designs can be found in 
-              //- TODO: add in link
-              a(href='/zeplin-link') zeplin. 
-              | There are mobile and desktop versions.
+            p.body The tasks below should take around two hours. Please complete as many as possible
+            p.body We use Zeplin to share designs. If you don't have an account you can 
+              a(href='https://zeplin.io/', target='_blank') sign up here.
+            p.body The final designs can be found in the 
+              a(href='https://zpl.io/29o5lmz', target='_blank') Zeplin web app 
+              | or the 
+              a(href='zpl://project?pid=5c170e6ec5dd4c508a4717f6', target='_blank') Zeplin desktop app. 
+              | There are mobile and desktop designs.
             p.body There is a NOTES.md file. Please leave anything you like in there. This could be reasoning as to why you have done x this way or a comment on one of the tasks. We will use these as discussion point when running through this task in person.
             p.body You will find some comments starting with SUGGESTION scattered throughout the codebase. These should help you get started.
             p.body Any other questions, please get in touch.
@@ -59,9 +63,9 @@
             p.body Task 5 is to make sure we have first name, goals, diet, date of birth and gender stored and ready to be sent to the API at the end of the survey. We also need to add in some quick validation. You will see on the name stage that the button is disabled until the user has entered their name. We need to do this on the other stages as well (date of birth is already done so you shouldn't have to do much there).
             p.body Also a user shouldn't be able to go to the next stage without completing the current stage they are on. The goals stage is limited to a maximum of 4 selections. You will need to build in a way of enforcing this and also giving the user some feedback when they try to select more than the limit.
 
-            p.body--large Bonus task
+            p.body--large Task 6
             p.body Things feel a bit sudden as you transition from one survey stage to another. It would be good to make this experience nicer.
-            p.body Bonus task is to make any UX changes that will make things feel nicer for the user.
+            p.body Task 6 is to make any UX changes that will make things feel nicer for the user.
             p.body If you don't have much time, leave some comments in NOTES.md about what you would do.
 
             h3 Get started
