@@ -78,8 +78,7 @@
 
 <style lang='stylus'>
 
-  .survey-questions,
-  .back-button-signup
+  .survey-questions
     padding: 60px 0 100px
 
     .question-description
