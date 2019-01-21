@@ -15,9 +15,9 @@
             br
             h3 Background
             p.body At Thriva we're striving to be the world's first personalised health care service. A major featured we developed to get us on our way is called Personalisation, funnily enough.
-            p.body Once a Thriva user has completed one of our tests we are able to provide recommendations to suggest what they should test next. These recommendations are based on their test result data as well as some other information they've provided in their health profile questionnaire — height, weight, medical conditions, diet etc.
+            p.body Once a Thriva user has completed one of our tests we are able to provide recommendations to suggest what they should test next. These recommendations are based on their test result data as well as some other information they've provided in their health profile questionnaire — height, weight, medical conditions, diet, etc.
             p.body This feature is great — lots of our customers love it and use it frequently. We did however receive requests from users who wanted to be able to do this when they first signed up to Thriva.
-            p.body We have taken this feedback on board and created a survey that is part of our onboarding flow. This allows us to collect the minimum amount of information that we need to be able to make valid recommendations of what someone should be testing.
+            p.body We have taken this feedback on board and created a survey that is part of our onboarding flow. This allows us to collect the minimum amount of information we need to be able to make relevant recommendations of what someone should be testing.
             p.body This survey collects 5 key pieces of information:
             ol
               li First name
@@ -26,24 +26,23 @@
               li Date of birth
               li Gender
 
-            p.body Once the survey is complete we then calculate the recommendations and allow further customisation of what they want to test.
+            p.body Once the survey is complete we calculate the recommendations and allow the user to further customise their package by adding and removing tests.
             p.body There are a few improvements we'd like you to make to this survey to give our users the best experience possible while going through the process. This project only includes the survey phase on the onboarding flow so you don't need to worry about the recommendation side of things.
 
             h3 Instructions
-            p.body The tasks below should take around two hours. Please complete as many as possible
+            p.body The tasks below should take around two hours; please complete as many as possible.
             p.body We use Zeplin to share designs. If you don't have an account you can 
               a(href='https://zeplin.io/', target='_blank') sign up here.
-            p.body The final designs can be found in the 
+            p.body The mobile and desktop designs can be found in the 
               a(href='https://zpl.io/29o5lmz', target='_blank') Zeplin web app 
               | or the 
               a(href='zpl://project?pid=5c170e6ec5dd4c508a4717f6', target='_blank') Zeplin desktop app. 
-              | There are mobile and desktop designs.
-            p.body There is a NOTES.md file. Please leave anything you like in there. This could be reasoning as to why you have done x this way or a comment on one of the tasks. We will use these as discussion point when running through this task in person.
+            p.body There is a NOTES.md file; please leave anything you'd like to let us know in there. This could be reasoning as to why you have done x this way or a comment on one of the tasks. We will use these as discussion point when running through this task in person.
             p.body You will find some comments starting with SUGGESTION scattered throughout the codebase. These should help you get started.
             p.body Any other questions, please get in touch.
             p.body--large Task 1
-            p We collect the users first name at stage one of the survey and want to use it on the goals stage (stage two).
-            p.body Task 1 is to build a way to store the users first name so it can be used in the goals stage.
+            p We collect the user's first name in stage one of the survey and want to use it on the goals stage (stage two).
+            p.body Task 1 is to build a way to store the user's first name so it can be used in the goals stage.
             p.body Note: Vuex is included in the project, it's up to you whether you use it or not.
 
             p.body--large Task 2
@@ -52,11 +51,12 @@
 
             p.body--large Task 3
             p.body Now that we have CheckButton.vue styled we need to set up it's functionality.
-            p.body Task 3 is to make it so the user can select multiple options on the goals stage (limited to 4) and only one option on the diet and gender stages. We need a way to store this data as it will need to be sent to the server at the end of the survey. As part of this you should fix any errors component is causing and also write some unit tests for the component so we can verify it's working correctly. The test file can be found at test/unit/specs/components/Survey/components/CheckButton.test.js. npm run unit will run the tests.
+            p.body Task 3 is to make it so the user can select multiple options on the goals stage (limited to 4) and only one option in the diet and gender stages. We need a way to store this data as it will be sent to the server at the end of the survey. 
+            p.body As part of this you should fix any errors the component is causing and also write some unit tests for the component so we can verify it's working correctly. The test file can be found at test/unit/specs/components/Survey/components/CheckButton.test.js. "npm run unit" will run the tests.
 
             p.body--large Task 4
             p.body In the designs you may have noticed a progress bar in the top right corner of the screen. In the Survey/connectors folder you will find SurveyProgress.vue. This is the parent component for components/Shared/ProgressBar.vue.
-            p.body Task 4 is to make this component work correctly. The component is already built we just need to supply it with the correct data so it will display how far through the survey stages we currently are. This component will also need some unit tests.
+            p.body Task 4 is to make this component work correctly. The component is already built we just need to supply it with the correct data so it will display how far through the survey stages the user currently is. This component will also need some unit tests.
 
             p.body--large Task 5
             p.body We now have everything in order, we just need to tidy things up a bit.
