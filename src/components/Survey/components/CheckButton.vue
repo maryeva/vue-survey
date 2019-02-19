@@ -42,7 +42,7 @@
     color: #3d4250
     display: flex;
     font-size: 20px
-    height: h = 120px
+    height: 120px
     justify-content: center;
     margin-bottom: 20px
     transition: .2s

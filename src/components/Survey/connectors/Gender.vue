@@ -12,10 +12,7 @@
     computed: {
       ...mapState('survey', {
         selectedGender: state => state.gender
-      }),
-      checkLimit () {
-        return this.selectedGender.length > 1
-      }
+      })
     },
     data () {
       return {
