@@ -1,12 +1,18 @@
 <script>
   import CheckButton from '@/components/Survey/components/CheckButton'
   import ThvButton from '@/components/Shared/Button'
+  import { mapState } from 'vuex'
 
   export default {
     name: 'Diet',
     components: {
       ThvButton,
       CheckButton
+    },
+    computed: {
+      ...mapState('survey', {
+        selectedDiet: state => state.diet
+      })
     },
     data () {
       return {
@@ -57,6 +63,8 @@
           v-for='(diet, key) in diets',
           :key='key',
           :text='diet.name'
+          :selected='selectedDiet === diet.name'
+          :value="'diet'"
         )
 
         .grid-x.button-container
@@ -65,6 +73,7 @@
               .back-button(@click='back') BACK
           .cell.auto.align-right
             thv-button(
+              :disabled='!selectedDiet'
               element='button',
               size='large'
               @click='submit'

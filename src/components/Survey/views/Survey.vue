@@ -71,12 +71,18 @@
             h3 Get started
             p You can find stage one of the survey 
               router-link(to='/name') here
-      
-      router-view
+
+      transition(name="fade" mode="out-in") 
+        router-view
 
 </template>
 
 <style lang='stylus'>
+  .fade-enter-active, .fade-leave-active
+    transition: opacity .3s ease
+
+  .fade-enter, .fade-leave-to
+    opacity: 0
 
   .survey-questions
     padding: 60px 0 100px

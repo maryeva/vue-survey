@@ -39,7 +39,6 @@
           year: parsedValue.year().toString()
         })
       }
-
       return {
         day: values.day,
         month: values.month,

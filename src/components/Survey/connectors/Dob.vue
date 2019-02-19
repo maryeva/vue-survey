@@ -9,6 +9,9 @@
       ThvButton
     },
     computed: {
+      dob: {
+        get () { return this.$store.state.survey.dob }
+      },
       disableNext () {
         let under18 = this.$refs.DobInput && this.$refs.DobInput.ageError
         return this.dob === '' || this.errors.items.length > 0 || under18 === true
@@ -26,7 +29,7 @@
         this.$validator.reset()
         this.$validator.validate().then(result => {
           if (result && !this.feedback) {
-            // SUGGESTION: could save DOB here is it is now assumed valid
+            this.$store.commit('survey/updateDob', this.dob)
             this.$router.push('/gender')
           }
         })
@@ -56,7 +59,6 @@
           :error='errors.has("dob")',
           minAge='18',
           :feedback='feedback'
-          @keyup.enter='submit',
           label=''
         )
 
@@ -66,9 +68,10 @@
               .back-button(@click='back') BACK
           .cell.auto.align-right
             thv-button(
-              element='button',
+              element='button'
               size='large'
               @click='submit'
+              @keyup.enter='submit'
             ) Next
 </template>
 

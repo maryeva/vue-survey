@@ -1,12 +1,21 @@
 <script>
   import CheckButton from '@/components/Survey/components/CheckButton'
   import ThvButton from '@/components/Shared/Button'
+  import { mapState } from 'vuex'
 
   export default {
     name: 'Gender',
     components: {
       ThvButton,
       CheckButton
+    },
+    computed: {
+      ...mapState('survey', {
+        selectedGender: state => state.gender
+      }),
+      checkLimit () {
+        return this.selectedGender.length > 1
+      }
     },
     data () {
       return {
@@ -44,6 +53,8 @@
           v-for='(gender, key) in genders',
           :key='key',
           :text='gender.name'
+          :selected='selectedGender === gender.name'
+          :value="'gender'"
         )
 
         .grid-x.button-container
@@ -52,6 +63,7 @@
               .back-button(@click='back') BACK
           .cell.auto.align-right
             thv-button(
+              :disabled='!selectedGender'
               element='button',
               size='large'
               @click='submit'
