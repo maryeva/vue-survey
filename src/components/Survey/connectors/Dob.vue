@@ -29,7 +29,7 @@
         this.$validator.reset()
         this.$validator.validate().then(result => {
           if (result && !this.feedback) {
-            this.$store.commit('survey/updateDob', this.dob)
+            this.$store.commit('survey/updateDob', this.$refs.DobInput.dob)
             this.$router.push('/gender')
           }
         })
